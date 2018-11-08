@@ -28,15 +28,15 @@ public class SimpleDemo {
 //    public static final String URL = "http://127.0.0.1:8060";
 
     public static void main(String[] args) {
-        getTenant();
-        getPhoneList();
-        getDialogFlowList();
+//        getTenant();
+//        getPhoneList();
+//        getDialogFlowList();
 
 //        getJobs();
 //        getJobDetail();
-//
-//        getCallRecordInfoList();
-//        callDetail();
+
+        getCallRecordInfoList();
+        callDetail();
 
 //        createTask();
 //        deleteTask();
@@ -102,7 +102,7 @@ public class SimpleDemo {
      * @return
      */
     private static void getJobDetail() {
-        String url = URL+"/apiOpen/v1/task/callDetail";
+        String url = URL+"/apiOpen/v1/task/getTaskDetail";
         Long timestamp = System.currentTimeMillis();
         url = url+"?robotCallJobId=1345";
         String result = HttpUrlConnectionUtils.doGet(url, APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
@@ -138,7 +138,7 @@ public class SimpleDemo {
     private static void callDetail() {
         String url = URL+"/apiOpen/v1/task/callDetail";
         Long timestamp = System.currentTimeMillis();
-        url = url+"?callRecordId=126";
+        url = url+"?callRecordId=1204995";
         String result = HttpUrlConnectionUtils.doGet(url, APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
         System.out.println(result);
     }

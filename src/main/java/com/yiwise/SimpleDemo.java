@@ -15,26 +15,26 @@ import java.util.*;
  */
 public class SimpleDemo {
 
-//    public static String APP_KEY = "WPFZXuFdwogAZmyw";
-//    public static String APP_SECRET = "LlzdUeqsCzsEoMmOODMjEIGGhOqiGzED";
-    public static String APP_KEY = "gvlfIPLJTMEAHgyM";
-    public static String APP_SECRET = "TuPngoiRCvpxYdOHcQOsWYvaLGhATNiW";
+    public static String APP_KEY = "WPFZXuFdwogAZmyw";
+    public static String APP_SECRET = "LlzdUeqsCzsEoMmOODMjEIGGhOqiGzED";
+//    public static String APP_KEY = "gvlfIPLJTMEAHgyM";
+//    public static String APP_SECRET = "TuPngoiRCvpxYdOHcQOsWYvaLGhATNiW";
 
     public static final String TENANT_SIGN = "zhongna";
 
     public static final String VERSION = "v1";
 
-//    public static final String URL = "https://crm.tanyibot.com";
-    public static final String URL = "http://127.0.0.1:8060";
+    public static final String URL = "https://crm.tanyibot.com";
+//    public static final String URL = "http://127.0.0.1:8060";
 
     public static void main(String[] args) {
-//        getTenant();
-//        getPhoneList();
-//        getDialogFlowList();
+        getTenant();
+        getPhoneList();
+        getDialogFlowList();
 
 //        getJobs();
 //        getJobDetail();
-
+//
 //        getCallRecordInfoList();
 //        callDetail();
 
@@ -45,7 +45,7 @@ public class SimpleDemo {
 //        stopTask();
 
 //        importTaskCustomer();
-        startTask();
+//        startTask();
 //        updateTaskAiCount();
     }
 
@@ -54,7 +54,7 @@ public class SimpleDemo {
      * @return
      */
     private static void getTenant() {
-        String url = URL+"/apiOpen/v1/tenant/getTenant";
+        String url = URL+"/apiOpen/v1/tenant/getTenants";
         Long timestamp = System.currentTimeMillis();
         String result = HttpUrlConnectionUtils.doGet(url, APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
         System.out.println(result);
@@ -65,7 +65,7 @@ public class SimpleDemo {
      * @return
      */
     private static void getPhoneList() {
-        String url = URL+"/apiOpen/v1/phone/getPhoneList";
+        String url = URL+"/apiOpen/v1/tenant/getPhones";
         Long timestamp = System.currentTimeMillis();
         String result = HttpUrlConnectionUtils.doGet(url, APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
         System.out.println(result);
@@ -76,7 +76,7 @@ public class SimpleDemo {
      * @return
      */
     private static void getDialogFlowList() {
-        String url = URL+"/apiOpen/v1/dialogFlow/getDialogFlowList";
+        String url = URL+"/apiOpen/v1/tenant/getRobots";
         Long timestamp = System.currentTimeMillis();
         String result = HttpUrlConnectionUtils.doGet(url, APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
         System.out.println(result);
@@ -87,7 +87,7 @@ public class SimpleDemo {
      * @return
      */
     private static void getJobs() {
-        String url = URL+"/apiOpen/v1/job/getJobs";
+        String url = URL+"/apiOpen/v1/task/getTasks";
         Long timestamp = System.currentTimeMillis();
 //        try {
 //            url = url+"?name="+ URLEncoder.encode("测试","utf-8") +"&status=IN_PROCESS"+"&pageNum=1"+"&pageSize=20";
@@ -102,9 +102,9 @@ public class SimpleDemo {
      * @return
      */
     private static void getJobDetail() {
-        String url = URL+"/apiOpen/v1/job/getJobDetail";
+        String url = URL+"/apiOpen/v1/task/callDetail";
         Long timestamp = System.currentTimeMillis();
-        url = url+"?robotCallJobId=121";
+        url = url+"?robotCallJobId=1345";
         String result = HttpUrlConnectionUtils.doGet(url, APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
         System.out.println(result);
     }
@@ -113,7 +113,7 @@ public class SimpleDemo {
      * @return
      */
     private static void getCallRecordInfoList() {
-        String url = URL+"/apiOpen/v1/callRecord/getCallRecordInfoList";
+        String url = URL+"/apiOpen/v1/task/getCallRecordInfoList";
         Long timestamp = System.currentTimeMillis();
         JSONObject jsonObject = new JSONObject();
 //        jsonObject.put("robotCallJobId", 28);
@@ -136,7 +136,7 @@ public class SimpleDemo {
      * @return
      */
     private static void callDetail() {
-        String url = URL+"/apiOpen/v1/callRecord/callDetail";
+        String url = URL+"/apiOpen/v1/task/callDetail";
         Long timestamp = System.currentTimeMillis();
         url = url+"?callRecordId=126";
         String result = HttpUrlConnectionUtils.doGet(url, APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());

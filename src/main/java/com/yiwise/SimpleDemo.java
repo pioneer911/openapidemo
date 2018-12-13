@@ -152,7 +152,7 @@ public class SimpleDemo {
         JSONObject jsonObject = new JSONObject();
         RobotCallJobPO robotCallJobPO = new RobotCallJobPO();
         robotCallJobPO.setTenantId(1L);
-        robotCallJobPO.setDialogFlowId(576L);
+        robotCallJobPO.setDialogFlowId(709L);
         robotCallJobPO.setName("测试名称1214-最后测试任务002222");
         robotCallJobPO.setMode("MANUAL");
         robotCallJobPO.setRobotCount(1);

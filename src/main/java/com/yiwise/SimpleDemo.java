@@ -253,7 +253,7 @@ public class SimpleDemo {
         properties.put("变量", "jjj");
         customerPersonImportVO.setProperties(properties);
         customerPersons.add(customerPersonImportVO);
-        jsonObject.put("robotCallJobId", 8628);
+        jsonObject.put("robotCallJobId", 8633);
         jsonObject.put("customerPersons", customerPersons);
 //        System.out.println(jsonObject.toJSONString());
         String result = HttpUrlConnectionUtils.doPost(url, jsonObject.toJSONString(), APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());

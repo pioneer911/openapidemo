@@ -15,10 +15,10 @@ import java.util.*;
  */
 public class SimpleDemo {
 
-    public static String APP_KEY = "WPFZXuFdwogAZmyw";
-    public static String APP_SECRET = "LlzdUeqsCzsEoMmOODMjEIGGhOqiGzED";
+    public static String APP_KEY = "ZbUDDjRzJonhvDCv";
+    public static String APP_SECRET = "ZOPwAaRSShjkDapgXZVLFcDwysMZDmuM";
 
-    public static final String TENANT_SIGN = "zhongna";
+    public static final String TENANT_SIGN = "yangdehong";
 
     public static final String VERSION = "v1";
 
@@ -26,17 +26,17 @@ public class SimpleDemo {
 //    public static final String URL = "http://127.0.0.1:8060";
 
     public static void main(String[] args) {
-        getTenant();
-        getPhoneList();
-        getDialogFlowList();
-
+//        getTenant();
+//        getPhoneList();
+//        getDialogFlowList();
+//
 //        getJobs();
 //        getJobDetail();
-
+//
 //        getCallRecordInfoList();
 //        callDetail();
 
-//        createTask();
+        createTask();
 //        deleteTask();
 //        updateTask();
 //        pauseTask();
@@ -102,7 +102,7 @@ public class SimpleDemo {
     private static void getJobDetail() {
         String url = URL+"/apiOpen/v1/task/getTaskDetail";
         Long timestamp = System.currentTimeMillis();
-        url = url+"?robotCallJobId=1345";
+        url = url+"?robotCallJobId=4543";
         String result = HttpUrlConnectionUtils.doGet(url, APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
         System.out.println(result);
     }
@@ -136,7 +136,7 @@ public class SimpleDemo {
     private static void callDetail() {
         String url = URL+"/apiOpen/v1/task/callDetail";
         Long timestamp = System.currentTimeMillis();
-        url = url+"?callRecordId=1204995";
+        url = url+"?callRecordId=2457790";
         String result = HttpUrlConnectionUtils.doGet(url, APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
         System.out.println(result);
     }
@@ -145,13 +145,13 @@ public class SimpleDemo {
      * @return
      */
     private static void createTask()  {
-        String url = URL+"/apiOpen/v1/job/create";
+        String url = URL+"/apiOpen/v1/task/create";
         Long timestamp = System.currentTimeMillis();
         JSONObject jsonObject = new JSONObject();
         RobotCallJobPO robotCallJobPO = new RobotCallJobPO();
         robotCallJobPO.setTenantId(1L);
-        robotCallJobPO.setDialogFlowId(316L);
-        robotCallJobPO.setName("测试名称1011-03");
+        robotCallJobPO.setDialogFlowId(576L);
+        robotCallJobPO.setName("测试名称1214-2");
         robotCallJobPO.setMode("MANUAL");
         robotCallJobPO.setRobotCount(1);
         robotCallJobPO.setDailyStartTime(LocalTime.of(9, 0));
@@ -174,7 +174,7 @@ public class SimpleDemo {
         robotCallJobPO.setWechatSendMethod("SENDTOALL");
         jsonObject.put("robotCallJob", robotCallJobPO);
         List<Long> longStringBOS = new ArrayList<>();
-        longStringBOS.add(355L);
+        longStringBOS.add(22L);
         jsonObject.put("jobPhoneNumberIdList",longStringBOS);
 //        System.out.println(jsonObject.toJSONString());
         String result = HttpUrlConnectionUtils.doPost(url, jsonObject.toJSONString(), APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());

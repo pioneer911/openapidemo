@@ -203,10 +203,10 @@ public class SimpleDemo {
      * @return
      */
     private static void startTask()  {
-        String url = URL+"/apiOpen/v1/job/start";
+        String url = URL+"/apiOpen/v1/task/start";
         Long timestamp = System.currentTimeMillis();
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("robotCallJobId", 1054);
+        jsonObject.put("robotCallJobId", 8628);
         String result = HttpUrlConnectionUtils.doPost(url, jsonObject.toJSONString(), APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
         System.out.println(result);
     }
@@ -259,22 +259,6 @@ public class SimpleDemo {
         String result = HttpUrlConnectionUtils.doPost(url, jsonObject.toJSONString(), APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
         System.out.println(result);
 
-//        String url = URL+"/apiOpen/v1/task/importTaskCustomer";
-//        Long timestamp = System.currentTimeMillis();
-//        JSONObject jsonObject = new JSONObject();
-//        List<CustomerPersonImportVO> customerPersons = new ArrayList<>();
-//        CustomerPersonImportVO customerPersonImportVO = new CustomerPersonImportVO();
-//        customerPersonImportVO.setName("ydh");
-//        customerPersonImportVO.setPhoneNumber("18100185002");
-//        Map<String, String> properties = new HashMap<>();
-//        properties.put("变量", "jjj");
-//        customerPersonImportVO.setProperties(properties);
-//        customerPersons.add(customerPersonImportVO);
-//        jsonObject.put("robotCallJobId", 121);
-//        jsonObject.put("customerPersons", customerPersons);
-//        System.out.println(jsonObject.toJSONString());
-//        String result = HttpUrlConnectionUtils.doPost(url, jsonObject.toJSONString(), APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
-//        System.out.println(result);
     }
 
     /**
@@ -285,7 +269,7 @@ public class SimpleDemo {
         String url = URL+"/apiOpen/v1/job/updateAiCount";
         Long timestamp = System.currentTimeMillis();
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("robotCallJobId", 1054);
+        jsonObject.put("robotCallJobId", 8628);
         jsonObject.put("robotCount", 1);
         String result = HttpUrlConnectionUtils.doPost(url, jsonObject.toJSONString(), APP_KEY, APP_SECRET, TENANT_SIGN, VERSION, timestamp.toString());
         System.out.println(result);

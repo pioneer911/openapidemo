@@ -15,8 +15,8 @@ import java.util.*;
  */
 public class SimpleDemo {
 
-    public static String APP_KEY = "gvlfIPLJTMEAHgyM";
-    public static String APP_SECRET = "TuPngoiRCvpxYdOHcQOsWYvaLGhATNiW";
+    public static String APP_KEY = "WPFZXuFdwogAZmyw";
+    public static String APP_SECRET = "LlzdUeqsCzsEoMmOODMjEIGGhOqiGzED";
 
     public static final String TENANT_SIGN = "zhongna";
 
@@ -26,15 +26,15 @@ public class SimpleDemo {
 //    public static final String URL = "http://127.0.0.1:8060";
 
     public static void main(String[] args) {
-//        getTenant();
-//        getPhoneList();
-//        getDialogFlowList();
+        getTenant();
+        getPhoneList();
+        getDialogFlowList();
 
 //        getJobs();
 //        getJobDetail();
 
 //        getCallRecordInfoList();
-        callDetail();
+//        callDetail();
 
 //        createTask();
 //        deleteTask();
